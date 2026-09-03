@@ -56,3 +56,46 @@ select,input,textarea{transition:border-color .2s,box-shadow .2s}select:focus,in
 .btn{transition:transform .2s,box-shadow .2s}.btn:hover{box-shadow:0 8px 22px rgba(15,51,36,.12)}
 .card{transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-4px);box-shadow:0 22px 60px rgba(22,61,43,.13)}
 @media(max-width:800px){.hero{min-height:650px}.editorial,.timeline{grid-template-columns:1fr}.editorial .number{font-size:70px}.quote{padding:35px 25px}.quote p{font-size:22px}.product-card img{height:260px}}
+
+/* ===== GUDDA FARM V10 — B2B LAUNCH SYSTEM ===== */
+:root{--forest:#0c3021;--forest2:#20593d;--gold:#d7a23a;--cream:#f3ead5;--paper:#fbfaf6;--ink:#142019;--muted:#68736c;--line:#ddd6c5}
+body{background:var(--paper)}
+.topbar{font-size:12px}
+.logo{width:215px}
+.hero{min-height:735px}
+.hero .copy{padding:120px 0}
+.hero h1{max-width:900px;font-size:clamp(48px,7.4vw,88px)}
+.hero p{font-size:20px}
+.section-head h2{max-width:760px}
+.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
+.trust-item{padding:22px;background:#fff;border:1px solid var(--line);border-radius:18px}
+.trust-item b{display:block;font:700 24px Georgia,serif;color:var(--forest)}
+.trust-item span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+.audience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.audience{background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px;min-height:200px;display:flex;flex-direction:column;justify-content:space-between}
+.audience .icon{font-size:28px}
+.audience h3{margin:14px 0 7px}
+.audience p{color:var(--muted);font-size:13px;margin:0 0 18px}
+.catalog{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
+.catalog-card{background:#fff;border:1px solid var(--line);border-radius:25px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 14px 40px rgba(12,48,33,.07)}
+.catalog-card img{height:100%;min-height:330px;width:100%;object-fit:cover}
+.catalog-body{padding:30px}
+.catalog-body .meta{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:900;color:var(--forest2)}
+.catalog-body ul{padding-left:18px;color:var(--muted);font-size:13px}
+.catalog-body li{margin:7px 0}
+.rfq{background:var(--forest);color:#fff;border-radius:28px;padding:48px;display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center}
+.rfq h2{color:#fff}
+.rfq p{color:#d4e0d8}
+.rfq .btn{margin-top:12px}
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mini-card{padding:22px;background:#fff;border:1px solid var(--line);border-radius:18px}
+.mini-card strong{color:var(--forest);display:block;margin-bottom:6px}
+.mini-card span{font-size:13px;color:var(--muted)}
+.hero-note{margin-top:26px;font-size:12px!important;color:#dbe8df!important}
+.legal-note{font-size:12px;color:var(--muted);margin-top:18px}
+.field-error{border-color:#a34a35!important}
+.form .btn{cursor:pointer;border:0}
+.success-panel{display:none;margin-top:18px;padding:15px;background:#eef5e8;border:1px solid #cbdcbe;border-radius:13px;color:#31552e;font-size:13px}
+.catalog-cta{display:inline-flex;margin-top:10px;color:var(--forest2);font-weight:900;font-size:13px}
+@media(max-width:900px){.trust-row,.audience-grid{grid-template-columns:1fr 1fr}.catalog,.rfq{grid-template-columns:1fr}.catalog-card{grid-template-columns:1fr}.catalog-card img{height:260px;min-height:0}.rfq{padding:34px 25px}}
+@media(max-width:600px){.trust-row,.audience-grid,.mini-grid{grid-template-columns:1fr}.hero{min-height:650px}.hero .copy{padding:90px 0}}
