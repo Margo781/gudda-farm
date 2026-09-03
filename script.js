@@ -18,3 +18,10 @@ document.querySelectorAll('form[data-whatsapp]').forEach(form=>{
     window.open('https://wa.me/918073094121?text='+encodeURIComponent(lines.join('\n')),'_blank');
   });
 });
+
+const params=new URLSearchParams(location.search);
+const productField=document.querySelector('select[name="product"]');
+if(productField && params.get('product')){
+  const wanted=params.get('product');
+  [...productField.options].forEach(o=>{if(o.text.toLowerCase()===wanted.toLowerCase()) productField.value=o.value});
+}
