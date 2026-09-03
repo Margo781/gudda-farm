@@ -1,0 +1,9 @@
+{
+  "name":"GUDDA FARM",
+  "short_name":"GUDDA FARM",
+  "start_url":"/",
+  "display":"standalone",
+  "background_color":"#fffdf7",
+  "theme_color":"#163d2b",
+  "description":"GUDDA FARM — Since 2003 — Karnataka agricultural produce sourcing."
+}

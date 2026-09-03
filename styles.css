@@ -113,3 +113,12 @@ body{background:var(--paper)}
 .location-band{background:var(--forest);color:#fff;border-radius:26px;padding:40px}.location-band h2{color:#fff}.location-band p{color:#d8e3dc}
 .marketing-list{display:grid;grid-template-columns:1fr 1fr;gap:18px}.marketing-list .mini-card{min-height:130px}
 @media(max-width:800px){.intent-grid,.marketing-list{grid-template-columns:1fr}}
+
+
+/* ===== GUDDA FARM V13 conversion + marketing layer ===== */
+.callbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:16px}.btn.call{background:#fff;color:var(--green);border:1px solid var(--line)}
+.source-chip{display:inline-flex;margin-top:12px;padding:6px 10px;border-radius:999px;background:rgba(217,164,65,.13);color:var(--gold);font-size:11px;font-weight:900;letter-spacing:.8px;text-transform:uppercase}.source-chip[hidden]{display:none}
+.share-panel{display:flex;gap:12px;flex-wrap:wrap;align-items:center;padding:24px;background:#fff;border:1px solid var(--line);border-radius:20px}.share-panel p{margin:0;color:var(--muted);font-size:14px;flex:1;min-width:220px}
+.v13-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.v13-card{padding:24px;background:#fff;border:1px solid var(--line);border-radius:20px}.v13-card strong{display:block;color:var(--green);font:700 21px Georgia,serif;margin-bottom:7px}.v13-card span{color:var(--muted);font-size:13px}
+.quick-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.quick-links a{padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:12px;font-weight:800;color:var(--green)}
+@media(max-width:800px){.v13-grid{grid-template-columns:1fr}.share-panel{display:block}.share-panel .btn{margin-top:12px}}
