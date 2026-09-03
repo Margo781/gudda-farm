@@ -52,6 +52,17 @@
     try{await navigator.clipboard.writeText(location.href);btn.textContent='Link copied ✓';setTimeout(()=>btn.textContent='Copy link',1600)}catch(e){window.prompt('Copy this link:',location.href)}
   }));
 
+  // V14 + V15 fast RFQ wizard
+  const rfq=document.querySelector('#fastRfq');
+  if(rfq){
+    const steps=[...rfq.querySelectorAll('.wizard-step')], next=document.querySelector('#rfqNext'), back=document.querySelector('#rfqBack'), send=document.querySelector('#rfqSend'), bar=document.querySelector('#rfqProgress'); let current=0;
+    const show=()=>{steps.forEach((x,i)=>x.classList.toggle('active',i===current)); if(next) next.style.display=current===steps.length-1?'none':'inline-flex'; if(back) back.style.display=current?'inline-flex':'none'; if(send) send.style.display=current===steps.length-1?'inline-flex':'none'; if(bar) bar.style.width=((current+1)/steps.length*100)+'%';};
+    const valid=()=>{const fields=[...steps[current].querySelectorAll('[required]')];let ok=true;fields.forEach(x=>{x.classList.toggle('field-error',!String(x.value||'').trim());if(!String(x.value||'').trim())ok=false});return ok};
+    next?.addEventListener('click',()=>{if(valid()){current=Math.min(current+1,steps.length-1);show();window.guddaTrack?.('rfq_step',{step:current+1})}});
+    back?.addEventListener('click',()=>{current=Math.max(0,current-1);show()}); show();
+    rfq.addEventListener('input',()=>{const f=new FormData(rfq);let n=0;['name','product','quantity','destination','requirements'].forEach(k=>{if(String(f.get(k)||'').trim())n++});const dots=[...(document.querySelectorAll('#scoreDots i'))];dots.forEach((d,i)=>d.classList.toggle('on',i<n));const t=document.querySelector('#scoreText');if(t)t.textContent=n>=4?'Good: your enquiry has useful buying detail.':'Add quantity, destination and requirements for a stronger enquiry.'});
+  }
+
   // Lightweight analytics hooks: ready for GA4/GTM without inventing an account ID.
   window.guddaTrack=(event,details={})=>{try{console.info('[GUDDA FARM]',event,details)}catch(e){}};
   document.querySelectorAll('a[href*="wa.me"]').forEach(a=>a.addEventListener('click',()=>window.guddaTrack('whatsapp_click',{page:location.pathname})));
