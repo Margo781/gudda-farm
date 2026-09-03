@@ -1,9 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150">
-<g fill="none" stroke="#315b37" stroke-width="8" stroke-linecap="round">
-<path d="M72 92C35 76 30 39 39 22c37 5 57 29 33 70"/>
-<path d="M70 91c4-31 20-51 48-63 9 30-8 56-48 63"/>
-</g>
+<g fill="none" stroke="#315b37" stroke-width="8" stroke-linecap="round"><path d="M72 92C35 76 30 39 39 22c37 5 57 29 33 70"/><path d="M70 91c4-31 20-51 48-63 9 30-8 56-48 63"/></g>
 <path fill="#d39f28" d="M34 111c-9-10-5-24 10-27 10-2 17 3 20 11-2 13-18 20-30 16Zm48 7c-12-8-11-23 2-30 10-5 20-1 25 8 0 12-14 24-27 22Zm-25 17c-12-8-10-22 3-28 10-4 20 1 24 10-1 12-14 22-27 18Z"/>
 <text x="145" y="78" font-family="Georgia,serif" font-size="48" font-weight="700" fill="#315b37">GUDDA FARM</text>
-<text x="147" y="108" font-family="Arial,sans-serif" font-size="14" letter-spacing="7" fill="#b18a3e">SINCE 2003</text>
-</svg>
+<text x="147" y="108" font-family="Arial,sans-serif" font-size="14" letter-spacing="7" fill="#b18a3e">SINCE 2003</text></svg>
