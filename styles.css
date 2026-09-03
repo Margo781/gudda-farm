@@ -22,3 +22,37 @@ footer{background:#102d21;color:#dce6df;padding:55px 0 25px}.foot{display:grid;g
 .buyerband{padding:34px;background:var(--cream);border:1px solid var(--line);border-radius:24px;display:flex;justify-content:space-between;align-items:center;gap:25px}.buyerband h3{margin:0}.buyerband p{margin:5px 0 0;color:var(--muted)}
 .badges{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}.badge{border:1px solid var(--line);background:#fff;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800;color:var(--green)}
 @media(max-width:800px){.kpis{grid-template-columns:1fr 1fr}.buyerband{display:block}.whatsapp-float{right:12px;bottom:12px}}
+
+/* ===== GUDDA FARM V9 premium layer ===== */
+:root{--forest:#0f3324;--forest2:#1e573c;--sage:#8ea66b;--sun:#d7a33d;--sand:#f3ead5;--paper:#fbfaf5;--ink:#17221b;--muted:#667269;--line:#dfd9c8}
+body{background:var(--paper)}
+.nav{box-shadow:0 2px 18px rgba(15,51,36,.04)}
+.hero{min-height:710px;background:linear-gradient(90deg,rgba(6,28,19,.91) 0%,rgba(6,28,19,.65) 48%,rgba(6,28,19,.22) 100%),url("assets/field.png") center/cover}
+.hero .copy{padding:110px 0}
+.hero h1{max-width:820px}
+.hero p{max-width:650px}
+.eyebrow{letter-spacing:3px}
+.goldline{height:1px;background:linear-gradient(90deg,var(--sun),transparent);margin:28px 0;width:170px}
+.marquee{overflow:hidden;background:var(--forest);color:#fff;padding:12px 0;border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;white-space:nowrap}
+.marquee span{display:inline-block;margin-right:48px;color:#e8dec3}
+.editorial{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:end}
+.editorial .number{font:700 92px/1 Georgia,serif;color:var(--sun);opacity:.8}
+.editorial p{font-size:18px;color:var(--muted);max-width:650px}
+.product-card{position:relative}
+.product-card .cardbody{padding:27px}
+.product-card img{height:310px}
+.product-card .mini-link{font-weight:900;color:var(--forest2);font-size:13px}
+.ribbon{position:absolute;top:18px;left:18px;background:var(--sun);color:#18241c;padding:7px 11px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase}
+.quote{background:var(--forest);color:#fff;border-radius:28px;padding:55px;position:relative;overflow:hidden}
+.quote:after{content:"“";position:absolute;right:28px;top:-35px;font:200px/1 Georgia,serif;color:rgba(255,255,255,.06)}
+.quote p{font:28px/1.35 Georgia,serif;max-width:760px;margin:0 0 20px}
+.quote small{color:#c7d5cc}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.timeline .step{min-height:190px}
+.timeline .step:before{color:var(--sun)}
+.sticky-note{border-left:4px solid var(--sun);padding:8px 0 8px 18px;color:var(--muted)}
+.form-progress{display:flex;gap:8px;margin-bottom:25px}.form-progress span{height:5px;flex:1;border-radius:99px;background:var(--line)}.form-progress span.active{background:var(--sun)}
+select,input,textarea{transition:border-color .2s,box-shadow .2s}select:focus,input:focus,textarea:focus{outline:none;border-color:var(--forest2);box-shadow:0 0 0 3px rgba(30,87,60,.08)}
+.btn{transition:transform .2s,box-shadow .2s}.btn:hover{box-shadow:0 8px 22px rgba(15,51,36,.12)}
+.card{transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-4px);box-shadow:0 22px 60px rgba(22,61,43,.13)}
+@media(max-width:800px){.hero{min-height:650px}.editorial,.timeline{grid-template-columns:1fr}.editorial .number{font-size:70px}.quote{padding:35px 25px}.quote p{font-size:22px}.product-card img{height:260px}}
