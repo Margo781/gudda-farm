@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gudda-farm-margo781.vercel.app/sitemap.xml
