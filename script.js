@@ -63,6 +63,50 @@
     rfq.addEventListener('input',()=>{const f=new FormData(rfq);let n=0;['name','product','quantity','destination','requirements'].forEach(k=>{if(String(f.get(k)||'').trim())n++});const dots=[...(document.querySelectorAll('#scoreDots i'))];dots.forEach((d,i)=>d.classList.toggle('on',i<n));const t=document.querySelector('#scoreText');if(t)t.textContent=n>=4?'Good: your enquiry has useful buying detail.':'Add quantity, destination and requirements for a stronger enquiry.'});
   }
 
+
+  // Website ratings -> Google Sheets
+  // Replace this placeholder with your deployed Google Apps Script Web App URL.
+  const RATING_ENDPOINT='https://script.google.com/macros/s/AKfycbyJAUVRIWOHdLvUxCOyxj0YY7MjhdvCE1BeNYxcb6Sfywf9RNgPVm3qq2cka-qMtLWH/exec';
+  const ratingForm=document.querySelector('#guddaRatingForm');
+  const ratingStatus=document.querySelector('#ratingStatus');
+  const ratingLabel=document.querySelector('#ratingLabel');
+  let selectedRating=0;
+  const ratingLabels={1:'1 / 5 — Needs improvement',2:'2 / 5 — Could be better',3:'3 / 5 — Good',4:'4 / 5 — Very good',5:'5 / 5 — Excellent'};
+  if(ratingForm){
+    const stars=[...ratingForm.querySelectorAll('.rating-star')];
+    stars.forEach(star=>star.addEventListener('click',()=>{
+      selectedRating=Number(star.dataset.rating||0);
+      stars.forEach(x=>x.classList.toggle('selected',Number(x.dataset.rating)<=selectedRating));
+      if(ratingLabel) ratingLabel.textContent=ratingLabels[selectedRating]||'Select a rating';
+    }));
+    ratingForm.addEventListener('submit',e=>{
+      e.preventDefault();
+      if(!selectedRating){ if(ratingStatus) ratingStatus.textContent='Please select a star rating first.'; return; }
+      if(!RATING_ENDPOINT || RATING_ENDPOINT.includes('PASTE_YOUR_')){
+        if(ratingStatus) ratingStatus.textContent='Rating form is ready, but the Google Sheets connection URL still needs to be added.';
+        return;
+      }
+      const fd=new FormData(ratingForm);
+      const params=new URLSearchParams({rating:String(selectedRating),name:String(fd.get('name')||''),feedback:String(fd.get('feedback')||''),page:location.pathname,source:source||''});
+      const iframe=document.querySelector('#ratingSubmitFrame');
+      if(iframe){
+        ratingForm.target='ratingSubmitFrame';
+        const oldAction=ratingForm.action;
+        ratingForm.action=RATING_ENDPOINT;
+        const hidden=document.createElement('input'); hidden.type='hidden'; hidden.name='rating'; hidden.value=String(selectedRating); ratingForm.appendChild(hidden);
+        const h2=document.createElement('input'); h2.type='hidden'; h2.name='page'; h2.value=location.pathname; ratingForm.appendChild(h2);
+        const h3=document.createElement('input'); h3.type='hidden'; h3.name='source'; h3.value=source||''; ratingForm.appendChild(h3);
+        ratingForm.submit();
+        setTimeout(()=>{
+          if(ratingStatus) ratingStatus.textContent='Thank you — your rating has been submitted.';
+          ratingForm.reset(); selectedRating=0; stars.forEach(x=>x.classList.remove('selected')); if(ratingLabel) ratingLabel.textContent='Select a rating';
+          ratingForm.action=oldAction;
+          [hidden,h2,h3].forEach(x=>x.remove());
+        },1200);
+      } else if(ratingStatus){ ratingStatus.textContent='Rating submission frame is missing.'; }
+    });
+  }
+
   // Lightweight analytics hooks: ready for GA4/GTM without inventing an account ID.
   window.guddaTrack=(event,details={})=>{try{console.info('[GUDDA FARM]',event,details)}catch(e){}};
   document.querySelectorAll('a[href*="wa.me"]').forEach(a=>a.addEventListener('click',()=>window.guddaTrack('whatsapp_click',{page:location.pathname})));
