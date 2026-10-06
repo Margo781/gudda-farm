@@ -66,8 +66,7 @@
 
   // Website ratings -> Google Sheets
   // Replace this placeholder with your deployed Google Apps Script Web App URL.
-  const RATING_ENDPOINT='https://script.google.com/macros/s/AKfycbyJAUVRIWOHdLvUxCOyxj0YY7MjhdvCE1BeNYxcb6Sfywf9RNgPVm3qq2cka-qMtLWH/exec';
-  const ratingForm=document.querySelector('#guddaRatingForm');
+const RATING_ENDPOINT='https://script.google.com/macros/s/AKfycbym4IISmjpu8AYJ3PdPXQ13ZXp6PFjOx0Zh4JbDZSSrMtiQSf1NeEQN1Pfzfu5hX8ad/exec';  const ratingForm=document.querySelector('#guddaRatingForm');
   const ratingStatus=document.querySelector('#ratingStatus');
   const ratingLabel=document.querySelector('#ratingLabel');
   let selectedRating=0;
