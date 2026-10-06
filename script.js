@@ -66,7 +66,8 @@
 
   // Website ratings -> Google Sheets
   // Replace this placeholder with your deployed Google Apps Script Web App URL.
-const RATING_ENDPOINT='https://script.google.com/macros/s/AKfycbym4IISmjpu8AYJ3PdPXQ13ZXp6PFjOx0Zh4JbDZSSrMtiQSf1NeEQN1Pfzfu5hX8ad/exec';  const ratingForm=document.querySelector('#guddaRatingForm');
+  const RATING_ENDPOINT='https://script.google.com/macros/s/AKfycbym4IISmjpu8AYJ3PdPXQ13ZXp6PFjOx0Zh4JbDZSSrMtiQSf1NeEQN1Pfzfu5hX8ad/exec';
+  const ratingForm=document.querySelector('#guddaRatingForm');
   const ratingStatus=document.querySelector('#ratingStatus');
   const ratingLabel=document.querySelector('#ratingLabel');
   let selectedRating=0;
@@ -90,51 +91,21 @@ const RATING_ENDPOINT='https://script.google.com/macros/s/AKfycbym4IISmjpu8AYJ3P
       const iframe=document.querySelector('#ratingSubmitFrame');
       if(iframe){
         ratingForm.target='ratingSubmitFrame';
-       if(iframe){
-  ratingForm.target='ratingSubmitFrame';
-
-  const oldAction=ratingForm.action;
-  const oldMethod=ratingForm.method;
-
-  ratingForm.action=RATING_ENDPOINT;
-  ratingForm.method='POST';
-
-  const hidden=document.createElement('input');
-  hidden.type='hidden';
-  hidden.name='rating';
-  hidden.value=String(selectedRating);
-  ratingForm.appendChild(hidden);
-
-  const h2=document.createElement('input');
-  h2.type='hidden';
-  h2.name='page';
-  h2.value=location.pathname;
-  ratingForm.appendChild(h2);
-
-  const h3=document.createElement('input');
-  h3.type='hidden';
-  h3.name='source';
-  h3.value=source||'';
-  ratingForm.appendChild(h3);
-
-  ratingForm.submit();
-
-  setTimeout(()=>{
-    if(ratingStatus) ratingStatus.textContent='Thank you — your rating has been submitted.';
-
-    ratingForm.reset();
-    selectedRating=0;
-
-    stars.forEach(x=>x.classList.remove('selected'));
-
-    if(ratingLabel) ratingLabel.textContent='Select a rating';
-
-    ratingForm.action=oldAction;
-    ratingForm.method=oldMethod;
-
-    [hidden,h2,h3].forEach(x=>x.remove());
-  },1200);
-}
+      const oldMethod=ratingForm.method;
+      ratingForm.method='POST';
+        const oldAction=ratingForm.action;
+        ratingForm.action=RATING_ENDPOINT;
+        const hidden=document.createElement('input'); hidden.type='hidden'; hidden.name='rating'; hidden.value=String(selectedRating); ratingForm.appendChild(hidden);
+        const h2=document.createElement('input'); h2.type='hidden'; h2.name='page'; h2.value=location.pathname; ratingForm.appendChild(h2);
+        const h3=document.createElement('input'); h3.type='hidden'; h3.name='source'; h3.value=source||''; ratingForm.appendChild(h3);
+        ratingForm.submit();
+        setTimeout(()=>{
+          if(ratingStatus) ratingStatus.textContent='Thank you — your rating has been submitted.';
+          ratingForm.reset(); selectedRating=0; stars.forEach(x=>x.classList.remove('selected')); if(ratingLabel) ratingLabel.textContent='Select a rating';
+          ratingForm.action=oldAction;
+      ratingForm.method=oldMethod;
+          [hidden,h2,h3].forEach(x=>x.remove());
+        },1200);
       } else if(ratingStatus){ ratingStatus.textContent='Rating submission frame is missing.'; }
     });
   }

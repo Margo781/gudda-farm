@@ -138,15 +138,15 @@ body{background:var(--paper)}
 
 
 /* Website rating */
-.rating-section{padding:72px 0;background:linear-gradient(180deg,#f7f3e9,#fff)}
-.rating-box{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:24px;padding:32px;box-shadow:0 16px 50px rgba(20,45,25,.08);text-align:center}
-.rating-box p{color:var(--muted)}
-.rating-stars{display:flex;justify-content:center;gap:8px;margin:20px 0 10px}
+.rating-section{padding:60px 0;background:linear-gradient(180deg,#f7f3e9,#fff)}
+.rating-box{max-width:640px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 26px;box-shadow:0 12px 38px rgba(20,45,25,.07);text-align:center}
+.rating-box p{color:var(--muted);margin:0 0 8px}
+.rating-stars{display:flex;justify-content:center;gap:6px;margin:14px 0 6px}
 .rating-star{border:0;background:transparent;font-size:38px;line-height:1;cursor:pointer;color:#d7d7d7;transition:transform .15s,color .15s}
 .rating-star:hover,.rating-star.selected{color:#d8a62a;transform:translateY(-2px)}
-.rating-label{min-height:24px;font-weight:700;color:var(--ink);margin-bottom:18px}
-.rating-input,.rating-textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:13px 14px;margin-top:10px;font:inherit;background:#fff}
-.rating-textarea{min-height:110px;resize:vertical}
-.rating-status{min-height:24px;margin-top:14px;font-weight:600;color:var(--green)}
+.rating-label{min-height:22px;font-weight:700;color:var(--ink);margin-bottom:12px}
+.rating-input,.rating-textarea{box-sizing:border-box;width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 13px;margin-top:8px;font:inherit;background:#fff}
+.rating-textarea{min-height:86px;resize:vertical}
+.rating-status{min-height:20px;margin-top:10px;font-weight:600;color:var(--green)}
 .rating-note{font-size:13px;margin-top:14px}
-@media(max-width:640px){.rating-box{padding:24px 18px}.rating-star{font-size:32px}}
+@media(max-width:640px){.rating-box{max-width:100%;padding:20px 16px}.rating-star{font-size:30px}.rating-input,.rating-textarea{padding:10px 12px}}
